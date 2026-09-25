@@ -124,7 +124,21 @@ volumen de la esfera que corresponden con dicho radio.
          */
 
         //EJERCICIO 8: Escribe un programa que lee dos números y los visualiza en orden ascendente.
+        /*
+        System.out.println("EJERCICIO 8 ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduce el primer numero: ");
+        double n1 = scan.nextDouble();
+        scan = new Scanner(System.in);
+        System.out.println("Introduce el segundo numero: ");
+        double n2 = scan.nextDouble();
+        System.out.println("El numero mayor es: " + (Math.max(n1,n2)) + " El numero menor es: " + (Math.min(n1,n2)));
+
+         */
+
+        //EJERCICIO 9: Escribe un programa que lee dos números y nos dice cuál es el mayor o si son iguales.
         
+
 
 
 
