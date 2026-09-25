@@ -132,12 +132,11 @@ volumen de la esfera que corresponden con dicho radio.
         scan = new Scanner(System.in);
         System.out.println("Introduce el segundo numero: ");
         double n2 = scan.nextDouble();
-        System.out.println("El numero mayor es: " + (Math.max(n1,n2)) + " El numero menor es: " + (Math.min(n1,n2)));
+        System.out.println("El numero mayor es: " + (Math.min(n1,n2)) + " El numero menor es: " + (Math.max(n1,n2)));
 
          */
 
         //EJERCICIO 9: Escribe un programa que lee dos números y nos dice cuál es el mayor o si son iguales.
-        
 
 
 
