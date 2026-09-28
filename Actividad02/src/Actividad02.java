@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Actividad02 {
     public static void main(String[] args) {
+        //EJEMPLOS DE SWITCH, IGNORAR.
+        /*
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduzca el mes: ");
         int mes = scan.nextInt();
@@ -51,6 +53,22 @@ public class Actividad02 {
             case "B" -> {
                 System.out.println("Martes");
             }
+
+         */
+
+        //EJERCICIO 1: Escribe un programa que pide la edad por teclado y nos muestra el mensaje de “Eres
+        //mayor de edad” solo si lo somos
+        /*
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduzca su edad: ");
+        int edad = scan.nextInt();
+        if (edad>=18) {
+            System.out.println("Eres mayor de edad");
         }
+
+
+         */
+        //EJERCICIO 2: Escribe un programa que pide la edad por teclado y nos muestra el mensaje de “eres
+        //mayor de edad” o el mensaje de “eres menor de edad”.
     }
 }
