@@ -106,7 +106,7 @@ volumen de la esfera que corresponden con dicho radio.
         System.out.println("Introduzca el precio del articulo Real: ");
         double precioReal = scan.nextDouble();
         //MIENTRAS LO MOSTRAMOS EN PANTALLA REALIZAMOS EL CALCULO MOSTRANDO FINALMENTE EL PORCENTAJE DE DESCUENTO
-        System.out.println("El porcentaje de descuento realizado es: " + ((precioReal - precioActual) / precioReal * 100 + "%"));
+        System.out.println("El porcentaje de descuento realizado es: " + ((precioReal - precioActual) / precioReal * 100.0 + "%"));
 
          */
 
@@ -132,18 +132,77 @@ volumen de la esfera que corresponden con dicho radio.
         scan = new Scanner(System.in);
         System.out.println("Introduce el segundo numero: ");
         double n2 = scan.nextDouble();
-        System.out.println("El numero mayor es: " + (Math.min(n1,n2)) + " El numero menor es: " + (Math.max(n1,n2)));
+        //System.out.println("El numero mayor es: " + (Math.min(n1,n2)) + " El numero menor es: " + (Math.max(n1,n2)));
+        System.out.println("Los dos numeros en orden ascendente es: " + (Math.min(n1,n2)) + " y " + (Math.max(n1,n2)));
 
          */
 
         //EJERCICIO 9: Escribe un programa que lee dos números y nos dice cuál es el mayor o si son iguales.
+/*
+        System.out.println("EJERCICIO 9 ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduce el primer numero: ");
+        double n1 = scan.nextDouble();
+        scan = new Scanner(System.in);
+        System.out.println("Introduce el segundo numero: ");
+        double n2 = scan.nextDouble();
+        System.out.println("Los numeros son iguales: " + (n1 == n2));
+        System.out.println("El primer numero es mayor que el segundo: " + (n1>n2));
+*/
 
 
+        //EJERCICIO 10: Escribe un programa que lea tres números distintos y nos diga cuál es el mayor.
+        /*
+        System.out.println("EJERCICIO 10 ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduce el primer numero: ");
+        double n1 = scan.nextDouble();
+        scan = new Scanner(System.in);
+        System.out.println("Introduce el segundo numero: ");
+        double n2 = scan.nextDouble();
+        scan = new Scanner(System.in);
+        System.out.println("Introduce el tercer numero: ");
+        double n3 = scan.nextDouble();
+        double numMayor1 = Math.max(n1,n2);
+        double numMayor2 = Math.max(numMayor1,n3);
+        System.out.println("El numero mayor es: " + numMayor2);
+        System.out.println("El numero mayor es: " + Math.max(n3, Math.max(n1,n2)));
 
+         */
 
+        //EJERCICIO 11: Escribe un programa que lee dos números, calcula y muestra el valor de su suma, resta,
+        //producto y división. (Ten en cuenta la división por cero).
+        /*
+        System.out.print("EJERCICIO 4");
+        double a;
+        double b;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Introduzca el primer numero: ");
+        a = scan.nextDouble();
+        scan = new Scanner(System.in);
+        System.out.print("Introduzca el segundo numero: ");
+        b = scan.nextDouble();
+        System.out.println("El primer numero es: " + a);
+        System.out.println("El segundo numero es: " + b);
+        //double suma = a + b;
+        System.out.println("La suma de los dos numeros es : " + (a + b));
+        System.out.println("La resta de los dos numeros es : " + (a - b));
+        System.out.println("El producto de los dos numeros es : " + (a * b));
+        System.out.println("La division de los dos numeros es : " + (a / b));
 
+         */
 
-
+        //EJERCICIO 13: Escribe un programa que lee un número y me dice si es positivo o negativo
+        //consideraremos el cero como positivo.
+        /*
+        System.out.println("EJERCICIO 13");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Introduzca el primer numero: ");
+        double num = scan.nextDouble();
+        System.out.println("El numero es positivo: " + (num >= 0));
+        System.out.println("El numero es negativo: " + (num < 0));
+        
+         */
 
     }
 }
