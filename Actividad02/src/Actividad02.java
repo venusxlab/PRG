@@ -45,5 +45,12 @@ public class Actividad02 {
             default:
                 System.out.println("Error: Introduzca un valor del 1 - 12.");
         }
+        //SINTAXIS DE SWITCH MODERNA
+        switch(opcion) {
+            case "A" -> System.out.println("Lunes");
+            case "B" -> {
+                System.out.println("Martes");
+            }
+        }
     }
 }
