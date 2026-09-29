@@ -64,7 +64,7 @@ volumen de la esfera que corresponden con dicho radio.
 
         //PRIMERO DEFINO LAS VARIABLES Y PIDO LOS DATOS NECESARIOS PARA CADA APARTADO
         //AQUI SE VA A CALCULAR LA LONGITUD DE LA CIRCUNFERENCIA
-
+        /*
         System.out.print("EJERCICIO 5");
         double PI = Math.PI;
         int radio;
@@ -72,8 +72,6 @@ volumen de la esfera que corresponden con dicho radio.
         System.out.print("Introduzca la longitud del radio: ");
         radio = scan.nextInt();
         //System.out.print("La longitud de la circunferencia es: " + (2 * PI * radio));
-
-
 
 
         /*
@@ -85,9 +83,7 @@ volumen de la esfera que corresponden con dicho radio.
         double radio2 = Math.pow(radio, exponente1);
         //MIENTRAS LO MUESTRO EN PANTALLA HAGO EL CALCULO DEL AREA PARA MOSTRARLO ENTERO.
         System.out.print("El area del circulo es: " + (PI * radio2));
-
          */
-
 
         //AQUI SE VA A CALCULAR EL VOLUMEN DE UNA ESFERA
         /*
