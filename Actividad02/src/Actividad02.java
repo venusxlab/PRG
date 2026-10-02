@@ -233,62 +233,87 @@ public class Actividad02 {
         //leído algún número negativo o no.
         /*
         IO.println("Ejercicio 10.");
-        int cont = 1;
-        int n1, n2, n3, n4, n5, n6, n7, n8, n9, n10;
-        do {
-            if (cont == 1) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce primer numero: ");
-                n1 = scan.nextInt();
-            } else if (cont == 2) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce segundo numero: ");
-                n2 = scan.nextInt();
-            } else if (cont == 3) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce tercer numero: ");
-                n3 = scan.nextInt();
-            } else if (cont == 4) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce cuarto numero: ");
-                n4 = scan.nextInt();
-            } else if (cont == 5) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce quinto numero: ");
-                n5 = scan.nextInt();
-            } else if (cont == 6) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce sexto numero: ");
-                n6 = scan.nextInt();
-            } else if (cont == 7) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce septimo numero: ");
-                n7 = scan.nextInt();
-            } else if (cont == 8) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce octavo numero: ");
-                n8 = scan.nextInt();
-            } else if (cont == 9) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce noveno numero: ");
-                n9 = scan.nextInt();
-            } else if (cont == 10) {
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Introduce decimo numero: ");
-                n10 = scan.nextInt();
+        Scanner scan = new Scanner(System.in);
+        boolean numNegativo = false;
+        for (int i = 1; i <= 10; i++) {
+            IO.println("Introduce el numero " + i + ":");
+            int n = scan.nextInt();
+            if (n == 0) {
+                IO.println("Introduce un numero que no sea nulo.");
+                break;
+            } else if (n < 0){
+                numNegativo = true;
             }
-            cont++;
-        } while (cont < 10);
+        }
+        if (numNegativo) {
+            IO.println("Se han leido numero negativos.");
+        } else {
+            IO.println("No se ha leido ningún número negativo.");
+        }
 
          */
 
+
         //EJERCICIO 11: Realiza un programa que lea 10 números no nulos y luego muestre un mensaje
         //indicando cuántos son positivos y cuantos negativos.
+        /*
+        IO.println("Ejercicio 10.");
+        Scanner scan = new Scanner(System.in);
+        boolean numNegativo = false;
+        int contPositivo = 0;
+        int contNegativo = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            IO.println("Introduce el numero " + i + ":");
+            int n = scan.nextInt();
+            if (n == 0) {
+                IO.println("Introduce un numero que no sea nulo.");
+                break;
+            } else if (n < 0) {
+                numNegativo = true;
+                contNegativo++;
+            } else {
+                contPositivo++;
+            }
+        }
+            IO.println("Se han leido " + contNegativo + " numeros negativos.");
+            IO.println("Se han leido " + contPositivo + " numeros positivos.");
+
+
+         */
+
+
 
         //EJERCICIO 12: Realiza un programa que lea una secuencia de números no nulos hasta que se introduzca
         //un 0, y luego muestre si ha leído algún número negativo, cuantos positivos y cuantos
         //negativos.
+        /*
+        IO.println("Ejercicio 10.");
+        Scanner scan = new Scanner(System.in);
+        boolean numNegativo = false;
+        int contPositivo = 0;
+        int contNegativo = 0;
 
+        for (int i = 1; i != 0; i++) {
+            IO.println("Introduce el numero " + i + ":");
+            int n = scan.nextInt();
+            if (n == 0) {
+                break;
+            } else if (n < 0) {
+                numNegativo = true;
+                contNegativo++;
+            } else {
+                contPositivo++;
+            }
+        }
+        if (numNegativo) {
+            IO.println("Se han leido numero negativos.");
+        }
+        IO.println("Se han leido " + contNegativo + " numeros negativos.");
+        IO.println("Se han leido " + contPositivo + " numeros positivos.");
+
+
+         */
         //EJERCICIO 13: Realiza un programa que calcule y escriba la suma y el producto de los 10 primeros
         //números naturales.
 
