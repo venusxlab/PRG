@@ -59,6 +59,7 @@ public class Actividad02 {
         //EJERCICIO 1: Escribe un programa que pide la edad por teclado y nos muestra el mensaje de “Eres
         //mayor de edad” solo si lo somos
         /*
+        IO.println("Ejercicio 1.");
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduzca su edad: ");
         int edad = scan.nextInt();
@@ -71,6 +72,7 @@ public class Actividad02 {
         //EJERCICIO 2: Escribe un programa que pide la edad por teclado y nos muestra el mensaje de “eres
         //mayor de edad” o el mensaje de “eres menor de edad”.
         /*
+        IO.println("Ejercicio 2.");
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduzca su edad: ");
         int edad = scan.nextInt();
@@ -88,6 +90,7 @@ public class Actividad02 {
         //EJERCICIO 3: Realiza un programa que muestre por pantalla los 20 primeros números naturales (1, 2,
         //3... 20).
         /*
+        IO.println("Ejercicio 3.");
         for(int i = 0; i <= 20; i++) {
             System.out.println(i);
         }
@@ -97,6 +100,7 @@ public class Actividad02 {
         //EJERCICIO 4: Realiza un programa que muestre los números pares comprendidos entre el 1 y el 200.
         //Para ello utiliza un contador y suma de 2 en 2.
         /*
+        IO.println("Ejercicio 4.");
         int suma = 0;
         for(int i = 2; i <= 200; i = i + 2){
             System.out.println(i);
@@ -104,9 +108,11 @@ public class Actividad02 {
 
          */
 
+
         //EJERCICIO 5: Realiza un programa que muestre los números pares comprendidos entre el 1 y el 200.
         //Esta vez utiliza un contador sumando de 1 en 1.
         /*
+        IO.println("Ejercicio 5.");
         int suma = 0;
         int i;
         for(i = 2; i <= 200; i++){
@@ -120,6 +126,7 @@ public class Actividad02 {
         //EJERCICIO 6: Realiza un programa que muestre los números desde el 1 hasta un número N que se
         //introducirá por teclado
         /*
+        IO.println("Ejercicio 6.");
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduzca el numero máximo: ");
         int numMax = scan.nextInt();
@@ -130,33 +137,35 @@ public class Actividad02 {
         }
 
          */
-
         //EJERCICIO 7: Escribe un programa que lea una calificación numérica entre 0 y 10 y la transforma en
         //calificación alfabética, escribiendo el resultado.
         //• de 0 a <3 Muy Deficiente.
         //• de 3 a <5 Insuficiente.
-        //• de 5 a <6 Bien.
-        //• de 6 a <9 Notable
-        //• de 9 a 10 Sobresaliente
+        //• de 5 a <6 Suficiente.
+        //• de 6 a <7 Bien.
+        //• de 7 a <9 Notable.
+        //• de 9 a 10 Sobresaliente.
         /*
+        IO.println("Ejercicio 7.");
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduzca su nota: ");
-        int nota = scan.nextInt();
+        double nota = scan.nextDouble();
 
         if (nota >= 0 && nota < 3) {
             System.out.println("Muy Deficiente");
         } else if (nota >= 3 && nota < 5) {
             System.out.println("Insuficiente");
         } else if (nota >= 5 && nota < 6) {
+            System.out.println("Suficiente");
+        } else if (nota >= 6 && nota < 7) {
             System.out.println("Bien");
-        } else if (nota >= 6 && nota < 9) {
+        } else if (nota >= 7 && nota < 9) {
             System.out.println("Notable");
-        } else if (nota == 9 || nota == 10) {
+        } else if (nota >= 9 || nota <= 10) {
             System.out.println("Sobresaliente");
         } else {
             System.out.println("Introduzca una nota valida porfavor.");
         }
-
 
          */
 
@@ -167,27 +176,111 @@ public class Actividad02 {
         //• 2! = 2 * 1
         //• 3! = 3 * 2* 1
         //• N! = N * (N-1) * (N-2)........* 3*2*1
+        /*
+        IO.println("Ejercicio 8.");
         Scanner scan = new Scanner(System.in);
         System.out.println("Introduzca su numero positivo para calcular el factorial: ");
         int n = scan.nextInt();
-        long fact;
+        double fact = 1;
         if (n < 0) {
             System.out.println("Por favor, introduzca un numero positivo.");
         } else {
             for (long i = 1; i <= n; i++) {
-                fact = n * i;
+                fact = fact * i;
             }
-
+            System.out.println(fact);
         }
-        System.out.println(fact);
 
+         */
 
         //EJERCICIO 9: Escribe un programa que recibe como datos de entrada una hora expresada en horas,
         //minutos y segundos que nos calcula y escribe la hora, minutos y segundos que serán,
         //transcurrido un segundo.
+        /*
+        //PRIMERO PIDO LOS DATOS Y LOS GUARDO EN VARIABLES A PARTE.
+        IO.println("Ejercicio 9.");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduzca la hora: ");
+        int h = scan.nextInt();
+        scan = new Scanner(System.in);
+        System.out.println("Introduzca los minutos: ");
+        int m = scan.nextInt();
+        scan = new Scanner(System.in);
+        System.out.println("Introduzca los segundos: ");
+        int s = scan.nextInt();
+        // PRIMERO AUMENTO LOS SEGUNDOS A UNO
+        s = s + 1;
+
+        //EMPIEZO CONDICIONAL MIRANDO SI LOS SEGUNDOS LLEGARON A 60 PARA VOLVER A 0 Y SUMAR 1 MINUTO.
+        //DESPUES COMPRUEBO LO MISMO CON LOS MINUTOS Y SUMANDO 1 A HORAS.
+        //POR ULTIMO COMPRUEBO SI SE HA PASADO DE 24 HORAS PARA RESETEAR A 0.
+        if (s >= 60) {
+            s = 0;
+            m = m + 1;
+        } if (m >= 60) {
+            m = 0;
+            h = h + 1;
+        } if (h >= 24) {
+            h = 0;
+        }
+        //FUERA DE ESTO MUESTRO EL RESULTADO.
+        System.out.println("La hora transcurrida es: " + h + "h, " + m + "m, " + s + "s.");
+
+         */
+
 
         //EJERCICIO 10: Realiza un programa que lea 10 números no nulos y luego muestre un mensaje de si ha
         //leído algún número negativo o no.
+        /*
+        IO.println("Ejercicio 10.");
+        int cont = 1;
+        int n1, n2, n3, n4, n5, n6, n7, n8, n9, n10;
+        do {
+            if (cont == 1) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce primer numero: ");
+                n1 = scan.nextInt();
+            } else if (cont == 2) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce segundo numero: ");
+                n2 = scan.nextInt();
+            } else if (cont == 3) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce tercer numero: ");
+                n3 = scan.nextInt();
+            } else if (cont == 4) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce cuarto numero: ");
+                n4 = scan.nextInt();
+            } else if (cont == 5) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce quinto numero: ");
+                n5 = scan.nextInt();
+            } else if (cont == 6) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce sexto numero: ");
+                n6 = scan.nextInt();
+            } else if (cont == 7) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce septimo numero: ");
+                n7 = scan.nextInt();
+            } else if (cont == 8) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce octavo numero: ");
+                n8 = scan.nextInt();
+            } else if (cont == 9) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce noveno numero: ");
+                n9 = scan.nextInt();
+            } else if (cont == 10) {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Introduce decimo numero: ");
+                n10 = scan.nextInt();
+            }
+            cont++;
+        } while (cont < 10);
+
+         */
 
         //EJERCICIO 11: Realiza un programa que lea 10 números no nulos y luego muestre un mensaje
         //indicando cuántos son positivos y cuantos negativos.
