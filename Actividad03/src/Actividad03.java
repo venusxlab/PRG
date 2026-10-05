@@ -8,7 +8,7 @@ public class Actividad03 {
     programa indicará que será necesario 1 billete de 100 €, 2 billetes de 20 € y 1 billete de
     5 € (no será válido por ejemplo 29 billetes de 5, que aunque sume 145 € no es el mínimo
     número de billetes posible).*/
-
+/*
         IO.println("Ejercicio 1");
         Scanner scan = new Scanner(System.in);
         IO.println("Introduce la cantidad de euros en multiplos de 5: ");
@@ -48,6 +48,8 @@ public class Actividad03 {
             IO.println("Porfavor introduce un multiplo de 5 para poder calcular los billetes.");
         }
 
+ */
+
         /*EJERCICIO 2: Realiza un programa que muestre un menú de opciones como el siguiente:
         1. Sumar
         2. Restar
@@ -57,11 +59,38 @@ public class Actividad03 {
         El menú debe de repetirse hasta que se escoja la opción 5 (Salir)*/
         /*
         IO.println("Ejercicio 2.");
-        Scanner scan = new Scanner(System.in);
-        IO.println("Introduzca la opción que desea elegir: ");
-        int opcion = scan.nextInt();
+        int opcionMenu;
+        do {
+            Scanner scan = new Scanner(System.in);
+            IO.println("Introduce el primer numero: ");
+            int n1 = scan.nextInt();
+            scan = new Scanner(System.in);
+            IO.println("Introduce el segundo numero: ");
+            int n2 = scan.nextInt();
+            scan = new Scanner(System.in);
+            opcionMenu = scan.nextInt();
+            IO.println("1. SUMAR \n" + "2 . RESTAR \n" + "3. MULTIPLICAR \n" + "4. DIVIDIR \n" + "5 SALIR");
+            switch (opcionMenu){
+                case 1 -> System.out.println("La suma de " + n1 + " Y " + n2 + " Es : " + (n1+n2));
+                case 2 -> System.out.println("La resta de " + n1 + " Y " + n2 + " Es : " + (n1-n2));
+                case 3 -> System.out.println("La multiplicación de " + n1 + " Y " + n2 + " Es : " + (n1*n2));
+                case 4 -> {
+                    if (n1 == 0 || n2 == 0){
+                        IO.println("La división de un numero entre 0 siempre es 0, porfavor, intenalo de nuevo");
+                    } else {
+                        System.out.println("La división de " + n1 + " Y " + n2 + " Es : " + (n1/n2));
+                    }
+                }
+                case 5 -> {
+                    IO.println("Gracias por usar el programa, adios.");
+                    break;
+                }
+                }
+        } while (opcionMenu != 5);
 
          */
+
+
 
     }
 }
