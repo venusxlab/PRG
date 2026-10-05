@@ -226,7 +226,9 @@ public class Actividad02 {
         //FUERA DE ESTO MUESTRO EL RESULTADO.
         System.out.println("La hora transcurrida es: " + h + "h, " + m + "m, " + s + "s.");
 
+
          */
+
 
 
         //EJERCICIO 10: Realiza un programa que lea 10 números no nulos y luego muestre un mensaje de si ha
@@ -252,13 +254,15 @@ public class Actividad02 {
         }
 
          */
+        // Copiar aqui el ejercicio resuelto.
 
 
         //EJERCICIO 11: Realiza un programa que lea 10 números no nulos y luego muestre un mensaje
         //indicando cuántos son positivos y cuantos negativos.
+
+        //IO.println("Ejercicio 11.");
+        //Scanner scan = new Scanner(System.in);
         /*
-        IO.println("Ejercicio 10.");
-        Scanner scan = new Scanner(System.in);
         boolean numNegativo = false;
         int contPositivo = 0;
         int contNegativo = 0;
@@ -281,6 +285,23 @@ public class Actividad02 {
 
 
          */
+        /*
+        int contador2 = 0;
+        int negativos = 0, positivos = 0;
+        while(contador2 <= 10) {
+            IO.println("Introduce un numero no nulo.");
+            int numero = scan.nextInt();
+            if (numero != 0) {
+                if (numero < 0) {
+                    negativos++;
+                } else {
+                    positivos++;
+                }
+            }
+        }
+        IO.println("Se han intorducido " + negativos + "numeros negativos y " + positivos + "numeros positivos.");
+
+         */
 
 
 
@@ -288,8 +309,9 @@ public class Actividad02 {
         //un 0, y luego muestre si ha leído algún número negativo, cuantos positivos y cuantos
         //negativos.
         /*
-        IO.println("Ejercicio 10.");
+        IO.println("Ejercicio 12.");
         Scanner scan = new Scanner(System.in);
+
         boolean numNegativo = false;
         int contPositivo = 0;
         int contNegativo = 0;
@@ -297,9 +319,7 @@ public class Actividad02 {
         for (int i = 1; i != 0; i++) {
             IO.println("Introduce el numero " + i + ":");
             int n = scan.nextInt();
-            if (n == 0) {
-                break;
-            } else if (n < 0) {
+            if (n < 0) {
                 numNegativo = true;
                 contNegativo++;
             } else {
@@ -312,10 +332,48 @@ public class Actividad02 {
         IO.println("Se han leido " + contNegativo + " numeros negativos.");
         IO.println("Se han leido " + contPositivo + " numeros positivos.");
 
+         */
+
+
+        /*
+        int numero = 0;
+        int negativos2 = 0;
+        int positivos2 = 0;
+        boolean negativosHay = false;
+
+        do {
+            IO.println("Introduce un numero");
+            numero = scan.nextInt();
+            if (numero < 0){
+                negativos2++;
+                negativosHay = true;
+            } else if (numero > 0){
+                positivos2++;
+            }
+        } while (numero != 0);
+        if (negativosHay) {
+            IO.println("Se han leido numero negativos.");
+        }
+        IO.println("Se han introducido " + negativos2 + "numeros negativos y " + positivos2 + "numeros positivos.");
 
          */
+
+
         //EJERCICIO 13: Realiza un programa que calcule y escriba la suma y el producto de los 10 primeros
         //números naturales.
+        /*
+        IO.println("Ejercicio 13.");
+        Scanner scan = new Scanner(System.in);
+        double suma = 0;
+        double producto = 1;
+        for (int i = 1; i <= 10; i++){
+            suma = suma + i;
+            producto = producto * i;
+        }
+        IO.println("La suma es : " + suma);
+        IO.println("El producto es : " + producto);
+
+         */
 
         //EJERCICIO 14:  Escribe un programa que calcula el salario neto semanal de un trabajador en función del
         //número de horas trabajadas y la tasa de impuestos de acuerdo a las siguientes hipótesis:
@@ -326,5 +384,33 @@ public class Actividad02 {
         //• Los siguientes 400 tienen un 25% de impuestos.
         //• Los restantes un 45% de impuestos.
         //Escribir nombre, salario bruto, tasas y salario neto.
+        /*
+        IO.println("Ejercicio 14.");
+        Scanner scan = new Scanner(System.in);
+        IO.println("Introduzca las horas trabajadas: ");
+        double horasTrabajadas = Math.abs(scan.nextDouble());
+        double  tarifa = 10.0;
+        double salarioNeto = 0, salarioBruto = 0;
+        double impuestos = 0;
+        if (horasTrabajadas <= 35){
+            salarioBruto = tarifa * horasTrabajadas;
+        } else {
+            salarioBruto = tarifa * 35 + (horasTrabajadas - 35) * tarifa * 1.5;
+        }
+        IO.println("El salario bruto es: " + salarioBruto);
+        if (salarioBruto <= 500){
+            salarioNeto = salarioBruto;
+        } else if (salarioBruto <= 900) {
+            impuestos = (salarioBruto - 500) * 0.25;
+            salarioNeto = salarioBruto - impuestos;
+        } else {
+            impuestos = 400 * 0.25 + (salarioBruto - 900) * 0.45;
+            salarioNeto = salarioBruto - impuestos;
+        }
+        IO.println("El salario neto es: " + salarioNeto);
+        IO.println("Las tasas son: " + impuestos);
+
+         */
+
     }
 }
