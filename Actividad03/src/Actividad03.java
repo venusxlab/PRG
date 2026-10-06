@@ -47,8 +47,68 @@ public class Actividad03 {
         } else {
             IO.println("Porfavor introduce un multiplo de 5 para poder calcular los billetes.");
         }
+        IO.println("Necesitas " + billeteQuinientos + " de quinientos" + ", " + billeteDoscientos + " De doscientos");
+        IO.println(", " + billeteCien + " billetes de cien" + ", " + billeteCincuenta + " de cincuenta");
+        IO.println(", " + billeteVeinte + " billetes de veinte" + ", " + billeteDiez + " de diez y " + billeteCinco + " billetes de cinco.");
 
  */
+        /*
+        Scanner sc = new Scanner(System.in);
+        int dinero = 0;
+        // la variable que voy restando para poder calcular y no tocar la variable principal por si hay que usarla
+        int dineroRestante = 0;
+
+        //Pido la cantidad de dinero comprobando que es multiplo de 5 y tomando el valor absoluto
+        // tomo el valor absoluto por si introducen un valor negativo
+        do {
+            IO.println("Introduzca la cantidad de dinero en multiplo de 5: ");
+            dinero = Math.abs(sc.nextInt());
+        } while (dinero % 5 != 0);
+
+        int n500 = 0, n200 = 0, n100 = 0, n50 = 0, n20 = 0, n10 = 0, n5 = 0;
+        String textoDinero = "Se necesitan los siguientes billetes: \n";
+
+        dineroRestante = dinero;
+        if (dineroRestante >= 500) {
+            n500 = dineroRestante / 500;
+            dineroRestante = dineroRestante - (n500 * 500);
+            textoDinero = textoDinero + "\n" + n500 + " billetes de 500";
+        }
+        if (dineroRestante >= 200) {
+            n200 = dineroRestante / 200;
+            dineroRestante = dineroRestante - (n200 * 200);
+            textoDinero = textoDinero + "\n" + n200 + " billetes de 200";
+        }
+        if (dineroRestante >= 100) {
+            n100 = dineroRestante / 100;
+            dineroRestante = dineroRestante - (n100 * 100);
+            textoDinero = textoDinero + "\n" + n100 + " billetes de 100";
+        }
+        if (dineroRestante >= 50) {
+            n50 = dineroRestante / 50;
+            dineroRestante = dineroRestante - (n50 * 50);
+            textoDinero = textoDinero + "\n" + n50 + " billetes de 50";
+        }
+        if (dineroRestante >= 20) {
+            n20 = dineroRestante / 20;
+            dineroRestante = dineroRestante - (n20 * 20);
+            textoDinero = textoDinero + "\n" + n20 + " billetes de 20";
+        }
+        if (dineroRestante >= 10) {
+            n10 = dineroRestante / 10;
+            dineroRestante = dineroRestante - (n10 * 10);
+            textoDinero = textoDinero + "\n" + n10 + " billetes de 10";
+        }
+        if (dineroRestante >= 5) {
+            n5 = dineroRestante / 5;
+            dineroRestante = dineroRestante - (n5 * 5);
+            textoDinero = textoDinero + "\n" + n5 + " billetes de 5";
+        }
+
+        IO.println(textoDinero);
+
+         */
+
 
         /*EJERCICIO 2: Realiza un programa que muestre un menú de opciones como el siguiente:
         1. Sumar
@@ -57,40 +117,41 @@ public class Actividad03 {
         4. Dividir (incluir manejo de división por 0)
         5. Salir
         El menú debe de repetirse hasta que se escoja la opción 5 (Salir)*/
+
         /*
         IO.println("Ejercicio 2.");
-        int opcionMenu;
+        String opcionMenu;
+        Scanner scan = new Scanner(System.in);
         do {
-            Scanner scan = new Scanner(System.in);
+            scan = new Scanner(System.in);
             IO.println("Introduce el primer numero: ");
-            int n1 = scan.nextInt();
-            scan = new Scanner(System.in);
+            double n1 = scan.nextDouble();
             IO.println("Introduce el segundo numero: ");
-            int n2 = scan.nextInt();
             scan = new Scanner(System.in);
-            opcionMenu = scan.nextInt();
+            double n2 = scan.nextDouble();
             IO.println("1. SUMAR \n" + "2 . RESTAR \n" + "3. MULTIPLICAR \n" + "4. DIVIDIR \n" + "5 SALIR");
+            scan = new Scanner(System.in);
+            opcionMenu = scan.nextLine();
             switch (opcionMenu){
-                case 1 -> System.out.println("La suma de " + n1 + " Y " + n2 + " Es : " + (n1+n2));
-                case 2 -> System.out.println("La resta de " + n1 + " Y " + n2 + " Es : " + (n1-n2));
-                case 3 -> System.out.println("La multiplicación de " + n1 + " Y " + n2 + " Es : " + (n1*n2));
-                case 4 -> {
+                case "1" -> IO.println("La suma de " + n1 + " Y " + n2 + " Es : " + (n1+n2));
+                case "2" -> IO.println("La resta de " + n1 + " Y " + n2 + " Es : " + (n1-n2));
+                case "3" -> IO.println("La multiplicación de " + n1 + " Y " + n2 + " Es : " + (n1*n2));
+                case "4" -> {
                     if (n1 == 0 || n2 == 0){
-                        IO.println("La división de un numero entre 0 siempre es 0, porfavor, intenalo de nuevo");
+                        IO.println("La división de un numero entre 0 siempre es 0, porfavor, intentalo de nuevo");
                     } else {
-                        System.out.println("La división de " + n1 + " Y " + n2 + " Es : " + (n1/n2));
+                        IO.println("La división de " + n1 + " Y " + n2 + " Es : " + (n1/n2));
                     }
                 }
-                case 5 -> {
+                case "5" -> {
                     IO.println("Gracias por usar el programa, adios.");
                     break;
                 }
+                default -> IO.println("Introduzca una opcion entre 1 - 5.");
                 }
-        } while (opcionMenu != 5);
+        } while (!opcionMenu.equals("5"));
 
          */
-
-
 
     }
 }
