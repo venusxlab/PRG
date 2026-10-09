@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
@@ -100,7 +101,8 @@ public class main {
 
         //MIRAR LA PÁGINA 5 DEL PDF DE LA UNIDAD DOS PARA CALCULAR LA MEDIA
         //USAR ESTE MISMO CÓDIGO.
-        int [] arrayNum = new int[10];
+        /*
+        int [] arrayNum = new int[20];
         int suma = 0;
 
         for (int i = 0; i < arrayNum.length ; i++) {
@@ -111,21 +113,69 @@ public class main {
         for (int j = 0; j < arrayNum.length; j++) {
             suma = suma + arrayNum[j];
         }
+        int media = suma / arrayNum.length;
+        IO.println("La media de la suma de los 20 numeros es:  " + media);
 
-        IO.println("La suma de todos los numeros es = " + suma);
+         */
 
         //EJERCICIO 6
         /*Crea un programa que pida dos valores enteros N y M, luego cree un array de tamaño
         N, escriba M en todas sus posiciones y lo muestre por pantalla.*/
+        /*
+        int N;
+        int M;
+        Scanner scan = new Scanner(System.in);
+        IO.println("Introduce el primer numero: ");
+        N = scan.nextInt();
+        scan = new Scanner(System.in);
+        IO.println("Introduce el segundo numero: ");
+        M = scan.nextInt();
+
+        int [] arrayN = new int[N];
+        Arrays.fill(arrayN,M);
+
+        for (int arrayNN : arrayN) {
+            IO.println(arrayNN);
+        }
+
+         */
+
 
         //EJERCICIO 7
         /*Crea un programa que pida dos valores enteros P y Q, luego cree un array que contenga
         todos los valores desde P hasta Q, y lo muestre por pantalla.*/
 
+        //SI P ES 3 Y Q ES 7, EL ARRAY TIENE QUE RELLENARSE ASI: 3,4,5,6,7.
+        /*
+        int P;
+        int Q;
+        Scanner scan = new Scanner(System.in);
+        IO.println("Introduce el primer numero: ");
+        P = scan.nextInt();
+        scan = new Scanner(System.in);
+        IO.println("Introduce el segundo numero: ");
+        Q = scan.nextInt();
+
+        int valor = (Q - P) + 1;
+
+        int [] arrayN = new int[valor];
+        for (int i = 0; i < valor; i++) {
+            arrayN[i] = P + i;
+        }
+
+        for (int num : arrayN) {
+            IO.println(num);
+        }
+
+         */
+
+
         //EJERCICIO 8
         /*Crea un programa que cree un array con 100 números reales aleatorios entre 0.0 y 1.0,
         utilizando Math.random(), y luego le pida al usuario un valor real R. Por último, mostrará
         cuántos valores del array son igual o superiores a R*/
+
+
 
         //EJERCICIO 9
         /*Crea un programa que cree un array de enteros de tamaño 100 y lo rellene con valores
