@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
@@ -227,29 +229,48 @@ public class main {
 
          */
 
+
+
         //EJERCICIO 10
         /*Crea un programa para realizar cálculos relacionados con la altura (en metros) de
         personas. Pedirá un valor N y luego almacenará en un array N alturas introducidas por teclado. Luego mostrará
         la altura media, máxima y mínima, así como cuántas personas miden por encima y por debajo de la media.*/
+        /*
         IO.println("EJERCICIO 10.");
         IO.println("Introduce el numero de alturas: ");
         Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();
-        int A;
-        int suma = 0;
+        double A;
+        double suma = 0;
         double[] arrayA = new double[N];
         for (int i = 0; i < arrayA.length; i++) {
             IO.println("Introduce la altura " + (i+1) + " en centimetros:");
             scan = new Scanner(System.in);
-            A = scan.nextInt();
+            A = scan.nextDouble();
             arrayA[i]= A;
             suma = suma + A;
         }
-        int media = (suma / N);
-        IO.println(media);
+        Arrays.sort(arrayA);
+        IO.println("La altura minima es: " + arrayA[0]);
+        IO.println("La altura maxima es: " + arrayA[N-1]);
+        double media = (suma / N);
+        IO.println("La altura media es: " + media);
+        int count = 0;
+        int count2 = 0;
         for (int j = 0; j < arrayA.length; j++) {
-
+            if (arrayA[j] > media){
+                count++;
+            }
+            if (arrayA[j] < media){
+                count2++;
+            }
         }
+        IO.println("La cantidad de personas que miden más que la media: " + count);
+        IO.println("La cantidad de personas que miden menos que la media: " + count2);
+
+         */
+
+
 
         //EJERCICIO 11
         /*Crea un programa que cree dos arrays de enteros de tamaño 100. Luego introducirá en
