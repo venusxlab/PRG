@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
@@ -174,19 +172,84 @@ public class main {
         /*Crea un programa que cree un array con 100 números reales aleatorios entre 0.0 y 1.0,
         utilizando Math.random(), y luego le pida al usuario un valor real R. Por último, mostrará
         cuántos valores del array son igual o superiores a R*/
+        /*
+        IO.println("EJERCICIO 8.");
+        double[] arrayR = new double[100];
+        int n = 0;
+        for (int i = 0; i < arrayR.length; i++) {
+            arrayR[i] = Math.random();
+        }
+        IO.println("Introduce un numero real: ");
+        Scanner scan = new Scanner(System.in);
+        double R = scan.nextDouble();
+        //CREO UNA CONDICION CON IF PARA QUE SE CUMPLA Y SI NO, NO REALIZA EL PROCESO
+        //BUCLE FOR PARA MIRAR SI SE CUMPLE LO PEDIDO EN EL ENUNCIADO, EN CASO DE QUE SI, SE VA SUMANDO
+        //POR ULTIMO MUESTRO EL NUMERO
+        if (R >= 0.0 && R <= 1.0){
+            for (int j = 0; j < arrayR.length; j++) {
+                if (R >= arrayR[j]) {
+                    n++;
+                    //IO.println(arrayR[j]);
+                }
+            }
+            IO.println("La cantidad de valores que son igual o superiores a su numero es: " + n);
+        } else {
+            IO.println("Porfavor introduce un numero entre 0.0 y 1.0");
+        }
 
 
+
+         */
 
         //EJERCICIO 9
         /*Crea un programa que cree un array de enteros de tamaño 100 y lo rellene con valores
         enteros aleatorios entre 1 y 10 (utiliza 1 + Math.random()*10). Luego pedirá un valor N
         y mostrará en qué posiciones del array aparece N.
         */
+        /*
+        IO.println("EJERCICIO 9.");
+        int[] arrayE = new int[100];
+        for (int i = 0; i < arrayE.length; i++) {
+            arrayE[i] = (int) (1 + (Math.random()*10));
+        }
+        IO.println("Introduce un numero entero: ");
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        if (N >= 1 && N <= 10){
+            for (int j = 0; j < arrayE.length; j++) {
+                if (N == arrayE[j]) {
+                    IO.println("Tu numero aparece en la posicion: " + j);
+                }
+            }
+        } else {
+            IO.println("Porfavor introduce un numero entre 1 - 10.");
+        }
+
+         */
 
         //EJERCICIO 10
         /*Crea un programa para realizar cálculos relacionados con la altura (en metros) de
         personas. Pedirá un valor N y luego almacenará en un array N alturas introducidas por teclado. Luego mostrará
         la altura media, máxima y mínima, así como cuántas personas miden por encima y por debajo de la media.*/
+        IO.println("EJERCICIO 10.");
+        IO.println("Introduce el numero de alturas: ");
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        int A;
+        int suma = 0;
+        double[] arrayA = new double[N];
+        for (int i = 0; i < arrayA.length; i++) {
+            IO.println("Introduce la altura " + (i+1) + " en centimetros:");
+            scan = new Scanner(System.in);
+            A = scan.nextInt();
+            arrayA[i]= A;
+            suma = suma + A;
+        }
+        int media = (suma / N);
+        IO.println(media);
+        for (int j = 0; j < arrayA.length; j++) {
+
+        }
 
         //EJERCICIO 11
         /*Crea un programa que cree dos arrays de enteros de tamaño 100. Luego introducirá en
