@@ -9,60 +9,73 @@ public class main {
         y luego muestre todos sus valores.
         */
         /*
-        int [] arrayNum = new int[10];
+        double [] arrayNum = new double[10];
 
         for (int i = 0; i < arrayNum.length ; i++) {
             Scanner scan = new Scanner(System.in);
-            IO.println("Indicame el numero " + i);
-            arrayNum [i] = scan.nextInt();
+            IO.println("Indicame el numero " + (i+1));
+            arrayNum [i] = scan.nextDouble();
         }
+        //SE PUEDE CON UN FOR EACH O PONIENDO EN EL PRIMER BUCLE UN IO PRINT PARA QUE ENSEÑE EL VALOR DE LA POSICION.
         for (int j = 0; j < arrayNum.length; j++) {
             IO.println("La posicion " + j + " = " + arrayNum[j]);
         }
 
          */
 
+
         //EJERCICIO 2
         /*Crea un programa que pida diez números reales por teclado, los almacene en un array,
         y luego muestre la suma de todos los valores.
         */
         /*
-        int [] arrayNum = new int[10];
-        int suma = 0;
+        double [] arrayNum = new double[10];
+        double suma = 0.0;
 
         for (int i = 0; i < arrayNum.length ; i++) {
             Scanner scan = new Scanner(System.in);
             IO.println("Indicame el numero " + (i + 1));
-            arrayNum [i] = scan.nextInt();
+            arrayNum [i] = scan.nextDouble();
+            suma = suma + arrayNum[i];
         }
+        // LO ARREGLE PONIENDO LA SUMA DENTRO DEL PRIMER BUCLE
         for (int j = 0; j < arrayNum.length; j++) {
             suma = suma + arrayNum[j];
         }
 
+
+
         IO.println("La suma de todos los numeros es = " + suma);
 
          */
-
 
         //EJERCICIO 3
         /*Crea un programa que pida diez números reales por teclado, los almacene en un array,
         y luego lo recorra para averiguar el máximo y mínimo y mostrarlos por pantalla.*/
         /*
 
-        int [] arrayNum = new int[10];
-        int mayor = arrayNum[0];
+        double [] arrayNum = new double[10];
+        double mayor = arrayNum[0];
+        // EL NUMERO MÁXIMO DE UN DOUBLE EN NEGATIVO SABIENDO QUE CUALQUIER NUMERO ES MAYOR QUE ESO
+        // Y EL NUMERO MÁXIMO EN EL MINIMO PARA LO MISMO, CUALQUIER NUMERO ES MENOR QUE ESE
+        // double maxE3 = - Double.MAX_VALUE, minE3 = Double.MAX_VALUE;
+
 
         for (int i = 0; i < arrayNum.length ; i++) {
             Scanner scan = new Scanner(System.in);
             IO.println("Indicame el numero " + (i + 1));
-            arrayNum [i] = scan.nextInt();
+            arrayNum [i] = scan.nextDouble();
+            //maxE3 = Math.max(numerosE3[i], maxE3);
+            //minE3 = Math.min(numerosE3[i], minE3);
         }
+        //IO.ptintln(maxE3);
+        //IO.ptintln(minE3);
         for (int j = 1; j < arrayNum.length; j++) {
             if (arrayNum[j] > mayor) {
                 mayor = arrayNum[j];
             }
         }
-        int menor = arrayNum[0];
+        double menor = arrayNum[0];
 
         for (int k = 1; k < arrayNum.length; k++) {
             if (arrayNum[k] < menor) {
@@ -71,7 +84,6 @@ public class main {
         }
 
         IO.println("El numero mayor es = " + mayor + ", y el menor es = " + menor);
-
          */
 
         //EJERCICIO 4
@@ -80,17 +92,20 @@ public class main {
         /*
 
         int [] arrayNum = new int[20];
-        int suma = 0;
+        int sumaPos = 0, sumaNeg = 0;
 
         for (int i = 0; i < arrayNum.length ; i++) {
             Scanner scan = new Scanner(System.in);
             IO.println("Indicame el numero " + (i + 1));
             arrayNum [i] = scan.nextInt();
+            if (arrayNum[i] < 0){
+                sumaPos += arrayNum[i];
+            } else {
+                sumaNeg += arrayNum[i];
+            }
         }
-        for (int j = 0; j < arrayNum.length; j++) {
-            suma = suma + arrayNum[j];
-            IO.println("El resultado de la suma es: " + suma);
-        }
+        IO.println("La suma de todos los valores positivos es: " + sumaPos);
+        IO.println("La suma de todos los valores negativos es: " + sumaNeg);
 
          */
 
@@ -98,22 +113,20 @@ public class main {
         //EJERCICIO 5
         /*Crea un programa que pida veinte números reales por teclado, los almacene en un array
         y luego lo recorra para calcular y mostrar la media: (suma de valores) / nº de valores.*/
-
-        //MIRAR LA PÁGINA 5 DEL PDF DE LA UNIDAD DOS PARA CALCULAR LA MEDIA
-        //USAR ESTE MISMO CÓDIGO.
         /*
-        int [] arrayNum = new int[20];
-        int suma = 0;
+        double [] arrayNum = new double[20];
+        double suma = 0.0;
 
         for (int i = 0; i < arrayNum.length ; i++) {
             Scanner scan = new Scanner(System.in);
             IO.println("Indicame el numero " + (i + 1));
-            arrayNum [i] = scan.nextInt();
+            arrayNum [i] = scan.nextDouble();
+            suma = suma + arrayNum[i];
         }
-        for (int j = 0; j < arrayNum.length; j++) {
-            suma = suma + arrayNum[j];
-        }
-        int media = suma / arrayNum.length;
+        //for (int j = 0; j < arrayNum.length; j++) {
+            //suma = suma + arrayNum[j];
+        //}
+        double media = suma / arrayNum.length;
         IO.println("La media de la suma de los 20 numeros es:  " + media);
 
          */
@@ -131,7 +144,9 @@ public class main {
         IO.println("Introduce el segundo numero: ");
         M = scan.nextInt();
 
+        //la creacion se puede meter en un if n > 0 se hace y si no, no.
         int [] arrayN = new int[N];
+        //TAMBIEN CON UN SOLO FOR SE RELLENA Y SE PINTA, QUE ES MÁS EFICIENTE.
         Arrays.fill(arrayN,M);
 
         for (int arrayNN : arrayN) {
@@ -140,13 +155,11 @@ public class main {
 
          */
 
-
         //EJERCICIO 7
         /*Crea un programa que pida dos valores enteros P y Q, luego cree un array que contenga
         todos los valores desde P hasta Q, y lo muestre por pantalla.*/
-
-        //SI P ES 3 Y Q ES 7, EL ARRAY TIENE QUE RELLENARSE ASI: 3,4,5,6,7.
         /*
+        //SI P ES 3 Y Q ES 7, EL ARRAY TIENE QUE RELLENARSE ASI: 3,4,5,6,7.
         int P;
         int Q;
         Scanner scan = new Scanner(System.in);
@@ -155,20 +168,20 @@ public class main {
         scan = new Scanner(System.in);
         IO.println("Introduce el segundo numero: ");
         Q = scan.nextInt();
-
-        int valor = (Q - P) + 1;
-
+        //POR SI EL USUARIO PONE NUM NEGATIVO PARA QUE SALGA BIEN
+        int valor = Math.abs(Q - P) + 1;
+        //POR SI Q ES MAYOR O MENOR QUE P
         int [] arrayN = new int[valor];
         for (int i = 0; i < valor; i++) {
-            arrayN[i] = P + i;
-        }
-
-        for (int num : arrayN) {
-            IO.println(num);
+            if (Q > P) {
+                arrayN[i] = P + i;
+            } else {
+                arrayN[i] = Q + i;
+            }
+            IO.println(arrayN[i]);
         }
 
          */
-
 
         //EJERCICIO 8
         /*Crea un programa que cree un array con 100 números reales aleatorios entre 0.0 y 1.0,
@@ -187,6 +200,7 @@ public class main {
         //CREO UNA CONDICION CON IF PARA QUE SE CUMPLA Y SI NO, NO REALIZA EL PROCESO
         //BUCLE FOR PARA MIRAR SI SE CUMPLE LO PEDIDO EN EL ENUNCIADO, EN CASO DE QUE SI, SE VA SUMANDO
         //POR ULTIMO MUESTRO EL NUMERO
+        //SE PODRIA HACER UN CONTADOR PARA MENORES Y EN EL DE MAYORES METER TAMBIEN LOS IGUALES
         if (R >= 0.0 && R <= 1.0){
             for (int j = 0; j < arrayR.length; j++) {
                 if (R >= arrayR[j]) {
@@ -198,8 +212,6 @@ public class main {
         } else {
             IO.println("Porfavor introduce un numero entre 0.0 y 1.0");
         }
-
-
 
          */
 
@@ -229,8 +241,6 @@ public class main {
 
          */
 
-
-
         //EJERCICIO 10
         /*Crea un programa para realizar cálculos relacionados con la altura (en metros) de
         personas. Pedirá un valor N y luego almacenará en un array N alturas introducidas por teclado. Luego mostrará
@@ -244,9 +254,9 @@ public class main {
         double suma = 0;
         double[] arrayA = new double[N];
         for (int i = 0; i < arrayA.length; i++) {
-            IO.println("Introduce la altura " + (i+1) + " en centimetros:");
+            IO.println("Introduce la altura " + (i+1) + " en metros:");
             scan = new Scanner(System.in);
-            A = scan.nextDouble();
+            A = Math.abs(scan.nextDouble());
             arrayA[i]= A;
             suma = suma + A;
         }
@@ -270,12 +280,25 @@ public class main {
 
          */
 
-
-
         //EJERCICIO 11
         /*Crea un programa que cree dos arrays de enteros de tamaño 100. Luego introducirá en
         el primer array todos los valores del 1 al 100. Por último, deberá copiar todos los valores
         del primer array al segundo array en orden inverso, y mostrar ambos por pantalla.*/
+        /*
+        IO.println("EJERCICIO 10.");
+        int[] arrayUno = new int[100];
+        int[] arrayDos = new int[100];
+        //Voy a llenar los arrays con valores aleatorios para que tengan un sentido.
+        for (int i = 0; i < arrayUno.length; i++) {
+            arrayUno[i] = (int) (1 + (Math.random()*10));
+        }
+
+        for (int i = 0; i < arrayDos.length; i++) {
+            arrayDos[i] = (int) (1 + (Math.random()*10));
+        }
+
+         */
+
 
         //EJERCICIO 12
         /*Crea un programa que cree un array de 10 enteros y luego muestre el siguiente menú
