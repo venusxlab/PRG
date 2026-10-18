@@ -64,7 +64,48 @@ public class Main {
             Nº de U's: 0
 
          */
+        /*
+        //pido por terminal la frase
+        IO.println("EJERCICIO 4.");
+        Scanner scan = new Scanner(System.in);
+        IO.println("Escriba una frase: ");
+        String frase = scan.nextLine();
 
+        //pongo toda la frase en minusculas por si acaso.
+        frase = frase.toLowerCase();
+
+        //creo todas las variables de las vocales.
+        int a = 0;
+        int e = 0;
+        int i = 0;
+        int o = 0;
+        int u = 0;
+
+        //creo un bucle para que recorra toda la frase y poder contar más tarde.
+        for (int j = 0; j < frase.length(); j++) {
+            //creo una variable que será la que recorra lera por letra de la frase
+            char letra = frase.charAt(j);
+            //creo ifs para cada letra, por lo visto funciona la comparacion sin las dibles comillas asi que las uso
+            if (letra == 'a') {
+                a++;
+            } else if (letra == 'e') {
+                e++;
+            } else if (letra == 'i') {
+                i++;
+            } else if (letra == 'o') {
+                o++;
+            } else if (letra == 'u'){
+                u++;
+            }
+        }
+        IO.println("Numero de A: " + a);
+        IO.println("Numero de E: " + e);
+        IO.println("Numero de I: " + i);
+        IO.println("Numero de O: " + o);
+        IO.println("Numero de U: " + u);
+
+
+         */
 
         /*EJERCICIO 5: Realiza un programa que lea una frase por teclado e indique si la frase es un palíndromo
         o no (ignorando espacios y sin diferenciar entre mayúsculas y minúsculas).
