@@ -119,5 +119,20 @@ public class Main {
         A man a plan a canal Panama
 
          */
+        /*
+        IO.println("EJERCICIO 5.");
+        Scanner scan = new Scanner(System.in);
+        IO.println("Escriba una frase: ");
+        String frase = scan.nextLine();
+        String fraseReves = "";
+        frase = frase.replace(" ", "");
+        for (int i = frase.length()-1; i >= 0 ; i--) {
+            fraseReves = fraseReves + frase.charAt(i);
+        }
+
+        IO.println("Es un palindromo: " + frase.equalsIgnoreCase(fraseReves));
+
+
+         */
     }
 }
