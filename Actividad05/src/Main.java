@@ -5,6 +5,7 @@ public class Main {
         /*EJERCICIO 1: Crea un programa que pida una cadena de texto por teclado y luego muestre cada
         palabra de la cadena en una línea distinta.*/
         /*
+        //Esta bien pero es poco elegante
         IO.println("EJERCICIO 1.");
         Scanner scan = new Scanner(System.in);
         IO.println("Dame la cadena de texto: ");
@@ -27,9 +28,13 @@ public class Main {
         IO.println("Dame la segunda cadena de texto: ");
         String textDos = scan.nextLine();
 
+        //HIZO UN IF, ELSE IF Y ELSE PARA COMPARAR SI SON EXACTAMENTE IGUALES, DESPUES LO MISMO SIN TENER EN CUENTA
+        //MAYUSCULAS Y MINUSCULAS Y UN ELSE PARA DECIR QUE NO SON IGUALES.
         IO.println("Son iguales: " + textUno.equalsIgnoreCase(textDos));
 
+
          */
+
 
         /*EJERCICIO 3: Crea un programa que pida por teclado tres cadenas de texto: nombre y dos apellidos.
         Luego mostrará un código de usuario (en mayúsculas) formado por la concatenación de
@@ -47,6 +52,8 @@ public class Main {
         IO.println("Apellido Dos: ");
         String apellidoDos = scan.nextLine();
 
+        //LO MISMO PERO SIN CREAR TANTAS VARIABLES JUNTANDO EL SUBSTRING Y EL UPPERCASE DESPUES CUADO ESTE JUNTO
+        //String codigo = (nombre.substring(0,3) + apellidoUno.substring(0,3) + apellidoDos.substring(0,3)).toUpperCase();
         String unoTres = nombre.substring(0,3);
         String dosTres = apellidoUno.substring(0,3);
         String tresTres = apellidoDos.substring(0,3);
@@ -75,11 +82,7 @@ public class Main {
         frase = frase.toLowerCase();
 
         //creo todas las variables de las vocales.
-        int a = 0;
-        int e = 0;
-        int i = 0;
-        int o = 0;
-        int u = 0;
+        int a = 0, e = 0, i = 0, o = 0, u = 0;
 
         //creo un bucle para que recorra toda la frase y poder contar más tarde.
         for (int j = 0; j < frase.length(); j++) {
@@ -119,13 +122,14 @@ public class Main {
         A man a plan a canal Panama
 
          */
-        /*
+        //MEJOR MIRAR GITHUB DE ANUAR QUE ESTE EJERCICIO ES MAS EFICIENTE.
         IO.println("EJERCICIO 5.");
         Scanner scan = new Scanner(System.in);
         IO.println("Escriba una frase: ");
         String frase = scan.nextLine();
         String fraseReves = "";
         frase = frase.replace(" ", "");
+        //le doy la vuelta a la frase y la guardo en una variable para despues comparar las dos cadenas de texto.
         for (int i = frase.length()-1; i >= 0 ; i--) {
             fraseReves = fraseReves + frase.charAt(i);
         }
@@ -133,6 +137,6 @@ public class Main {
         IO.println("Es un palindromo: " + frase.equalsIgnoreCase(fraseReves));
 
 
-         */
+
     }
 }
