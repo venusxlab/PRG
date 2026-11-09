@@ -61,7 +61,7 @@ public class Libro {
         return this.autor;
     }
 
-    //En caso de que nos insterese poder cambiar el autor del libro como un libro tecnico
+    //En caso de que nos interese poder cambiar el autor del libro como un libro tecnico
     public void setAutor(String autor) {
         this.autor = autor;
     }
