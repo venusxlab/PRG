@@ -23,7 +23,6 @@ public class Biblioteca {
         this.nTelefono = nTelefono;
         //Inicializamos el array apuntando a la variable con la dimension inicial antes creada
         this.libros = new Libro[this.dimensionInicial];
-
         this.nLibrosActuales = 0;
     }
 

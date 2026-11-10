@@ -1,22 +1,25 @@
 package model;
 
+import java.time.LocalDateTime;
+
 public class Movimiento {
     //Atributos de la clase
     private static int contadorMovimiento = 0;
+    //private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
 
     private final int id;
-    private String fecha;
-    private String tipo;
-    private int cantidad;
+    private LocalDateTime fecha;
+    private Tipo tipo;
+    private double cantidad;
 
     //Constructor
-    public Movimiento(String fecha, String tipo, int cantidad){
-        this.fecha = fecha;
-        this.tipo = tipo;
-        this.cantidad = cantidad;
+    public Movimiento(Tipo tipo, double cantidad){
         this.id = contadorMovimiento;
         contadorMovimiento++;
-
+        this.fecha = LocalDateTime.now();
+        this.tipo = tipo;
+        this.cantidad = cantidad;
+        //Inicializamos el array apuntando a la variable con la dimension inicial antes creada
     }
 
     //Metodo para obtener toda la información de Movimiento

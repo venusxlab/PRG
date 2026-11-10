@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 public class Libro {
 
     //Contador static de la clase, para saber el numero total de libros creados
@@ -12,8 +14,8 @@ public class Libro {
     private String autor;
     private int nPag;
     private String editorial;
-    private String genero;
-    private String fechaPublicacion;
+    private Genero genero;
+    private LocalDate fechaPublicacion;
 
     //Constructores
     public Libro(String isbn, String titulo, String autor){
@@ -23,13 +25,15 @@ public class Libro {
         //Los inicializa en vacio para que no de null y no de fallo. Solo que tengan un valor vacio.
         this.nPag = 0;
         this.editorial = "";
-        this.genero = "";
-        this.fechaPublicacion = "";
+        this.genero = Genero.GENERICO;
+        this.fechaPublicacion = LocalDate.now(); // LocalDate.of(año,mes,diadelmes);
+        //private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        //LocalDate.parse("2026-11-10", formatter);
         this.id = contadorTotal;
         contadorTotal++;
     }
 
-    public Libro(String isbn, String titulo, String autor, int nPag, String editorial, String genero, String fechaPublicacion){
+    public Libro(String isbn, String titulo, String autor, int nPag, String editorial, Genero genero, LocalDate fechaPublicacion){
         this.isbn = isbn;
         this.autor = autor;
         this.titulo = titulo;
@@ -75,16 +79,16 @@ public class Libro {
         this.editorial = editorial;
     }
 
-    public String getFechaPublicacion() {
+    public LocalDate getFechaPublicacion() {
         return this.fechaPublicacion;
     }
 
-    public String getGenero() {
+    public Genero getGenero() {
         return this.genero;
     }
 
     //Lo mismo
-    public void setGenero(String genero) {
+    public void setGenero(Genero genero) {
         this.genero = genero;
     }
 
@@ -105,8 +109,8 @@ public class Libro {
         infoLibro += "Titulo: " + this.titulo + "\n";
         infoLibro += "Autor: " + this.autor + "\n";
         infoLibro += "ISBN: " + this.isbn + "\n";
-        infoLibro += "Genero: " + this.genero + "\n";
-        infoLibro += "Fecha Publicacion: " + this.fechaPublicacion + "\n";
+        infoLibro += "model.Genero: " + this.genero + "\n";
+        infoLibro += "Fecha Publicacion: " + this.fechaPublicacion /*format(formatter)*/ + "\n";
         infoLibro += "Editorial: " + this.editorial + "\n";
         infoLibro += "NPaginas: " + this.nPag + "\n";
 

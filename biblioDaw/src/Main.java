@@ -1,3 +1,4 @@
+import model.Genero;
 import model.Libro;
 
 void main() {
@@ -6,4 +7,5 @@ void main() {
     IO.println(l1.getAutor());
 
     IO.println(l1.infoLibro());
+    l1.setGenero(Genero.FANTASIA);
 }
