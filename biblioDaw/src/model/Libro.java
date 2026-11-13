@@ -114,7 +114,20 @@ public class Libro {
         infoLibro += "Editorial: " + this.editorial + "\n";
         infoLibro += "NPaginas: " + this.nPag + "\n";
 
-        return infoLibro;
+        //return infoLibro;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID: " + this.id + "\n");
+        sb.append("Titulo: " + this.titulo + "\n");
+        sb.append("Autor: " + this.autor + "\n");
+        sb.append("ISBN: " + this.isbn + "\n");
+        sb.append("model.Genero: " + this.genero + "\n";);
+        sb.append("Fecha Publicacion: " + this.fechaPublicacion /*format(formatter)*/ + "\n");
+        sb.append("Editorial: " + this.editorial + "\n");
+        sb.append("NPaginas: " + this.nPag + "\n");
+
+
+        return sb.toString();
     }
 
 

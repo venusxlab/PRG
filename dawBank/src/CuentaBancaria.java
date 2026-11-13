@@ -40,7 +40,7 @@ public class CuentaBancaria {
 
         infoCuentaBancaria += "IBAN: " + this.iban + "\n";
         infoCuentaBancaria += "Titular: " + this.titular + "\n";
-        infoCuentaBancaria += "Saldo: " + this.saldo + "\n";
+        infoCuentaBancaria += "Saldo: " + this.saldo + "€" + "\n";
 
         return infoCuentaBancaria;
     }
@@ -82,6 +82,19 @@ public class CuentaBancaria {
             resultado = true;
         }
         return resultado;
+    }
+    
+    //Metodo mostrar historial de movimientos
+    public String HistorialMovimientos() {
+        String historial = "";
+        if (this.nMovimientosActuales == 0){
+            historial = "No hay movimientos asociados";
+        } else {
+            for (int i = 0; i < nMovimientosActuales; i++) {
+                historial =  historial + this.Movimientos[i].mostrarInfoMovimiento() + "\n";
+            }
+        }
+        return historial;
     }
 
     /*

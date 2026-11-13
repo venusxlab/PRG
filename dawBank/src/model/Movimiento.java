@@ -16,7 +16,7 @@ public class Movimiento {
     public Movimiento(Tipo tipo, double cantidad){
         this.id = contadorMovimiento;
         contadorMovimiento++;
-        this.fecha = LocalDateTime.now();
+        this.fecha = LocalDateTime.now(); //Ponerle formato a la fecha
         this.tipo = tipo;
         this.cantidad = cantidad;
         //Inicializamos el array apuntando a la variable con la dimension inicial antes creada
