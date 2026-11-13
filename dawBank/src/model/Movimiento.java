@@ -19,7 +19,6 @@ public class Movimiento {
         this.fecha = LocalDateTime.now(); //Ponerle formato a la fecha
         this.tipo = tipo;
         this.cantidad = cantidad;
-        //Inicializamos el array apuntando a la variable con la dimension inicial antes creada
     }
 
     //Metodo para obtener toda la información de Movimiento

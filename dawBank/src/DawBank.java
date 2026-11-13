@@ -6,17 +6,11 @@ void main() {
     String iban = sc.nextLine();
     IO.println("Introduzca su nombre completo: (Ejemplo: Darlenis Severino)");
     String titular = sc.nextLine();
+    //Hago comprobacion para que no dejen vacio el titular.
     while (titular == null || titular == ""){
         IO.println("Porfavor, debe introducir un nombre correcto:");
         titular = sc.nextLine();
     }
-    /*
-    if (titular == null || titular == ""){
-        IO.println("Porfavor, debe introducir un nombre correcto:");
-        titular = sc.nextLine();
-    }
-
-     */
     //Mientras el metodo de falso se repite hasta que introduce un IBAN que cumpla el patron dado en el metodo
     while(!ValidarIban(iban)){
         IO.println("El iban introducido no es correcto, introduzca uno valido.");
@@ -57,32 +51,39 @@ void main() {
                 IO.println("El saldo de tu cuenta es: " + nuevaCuenta.getSaldo() + "€");
             }
             //Ingresar dinero
-            //REALIZAR EXPRESION REGULAR PARA QUE EL STRING QUE INTRODUZCA SEA SOLO NUMERO Y DESPUES PASAR DE STRING A DOUBLE
-            //DESPUES COMPROBAR SI SE CUMPLE O NO Y REPETIR HASTA QUE INTRODUZCA UN DIGITO
             else if (opcion.equalsIgnoreCase("ingreso")) {
                 IO.println("Por favor, introduzca la cantidad en euros que desee ingresar:");
-                double ingreso = sc.nextDouble();
-                nuevaCuenta.ingresarDinero(ingreso);
-                if (!nuevaCuenta.ingresarDinero(ingreso)){
-                    IO.println("No se ha podido ingresar el dinero, porfavor, vuelva a intentarlo.");
-                } else {
-                    IO.println("Se ha ingresado dinero correctamente.");
+                String ingreso = sc.nextLine();
+                //Comprobacion para que introduzcan solo numeros
+                while (!soloNumeros(ingreso)){
+                    IO.println("Error, porfavor, introduce un numero:");
+                    ingreso = sc.nextLine();
                 }
-                if(ingreso > 3000){
+                //Convierto de string a double
+                double cantidad = Double.valueOf(ingreso);
+                //Dentro de la condicion se ejecuta el metodo que da true y si da false muestra error
+                if (nuevaCuenta.ingresarDinero(cantidad)){
+                    IO.println("Se ha ingresado dinero correctamente.");
+                } else {
+                    IO.println("No se ha podido ingresar el dinero, porfavor, vuelva a intentarlo.");
+                }
+                if(cantidad > 3000){
                     IO.println("AVISO: Notificar a hacienda.");
                 }
             }
-            //retirar dinero
-            //REALIZAR EXPRESION REGULAR PARA QUE EL STRING QUE INTRODUZCA SEA SOLO NUMERO Y DESPUES PASAR DE STRING A DOUBLE
-            //DESPUES COMPROBAR SI SE CUMPLE O NO Y REPETIR HASTA QUE INTRODUZCA UN DIGITO
             else if (opcion.equalsIgnoreCase("retirar")) {
                 IO.println("Por favor, introduzca la cantidad en euros que desee retirar:");
-                double cantidad = sc.nextDouble();
-                nuevaCuenta.ingresarDinero(cantidad);
-                if (!nuevaCuenta.retirarDinero(cantidad)){
-                    IO.println("No se ha podido ingresar el dinero, porfavor, vuelva a intentarlo.");
-                } else {
+                String retirar = sc.nextLine();
+                while (!soloNumeros(retirar)){
+                    IO.println("Error, porfavor, introduce un numero:");
+                    retirar = sc.nextLine();
+                }
+                double cantidad = Double.valueOf(retirar);
+                //nuevaCuenta.retirarDinero(cantidad);
+                if (nuevaCuenta.retirarDinero(cantidad)){
                     IO.println("Se ha retirado dinero correctamente.");
+                } else {
+                    IO.println("No se ha podido retirar el dinero, porfavor, vuelva a intentarlo.");
                 }
                 if(nuevaCuenta.getSaldo() < 0 && nuevaCuenta.getSaldo() >= -50){
                     IO.println("AVISO: Saldo negativo.");
@@ -111,4 +112,11 @@ public static boolean ValidarIban(String iban){
     Pattern patronIban = Pattern.compile("^[A-Za-z]{2}\\d{22}$"); //dos letras y 22 numeros
     Matcher mat = patronIban.matcher(iban); //Devuelve verdadero o falso si el string cumple el patron compilado
     return mat.matches();
+}
+
+//Metodo introducir solo numeros (para que no de error grande java)
+public static boolean soloNumeros(String numero){
+    Pattern patronNumero = Pattern.compile("^\\d+(\\.\\d{1,2})?$");
+    Matcher match = patronNumero.matcher(numero);
+    return match.matches();
 }
