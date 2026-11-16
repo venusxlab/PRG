@@ -4,7 +4,7 @@ void main() {
     IO.println("Introduzca el IBAN: (Ejemplo: ES1234567891234567891234)");
     Scanner sc = new Scanner(System.in);
     String iban = sc.nextLine();
-    IO.println("Introduzca su nombre completo: (Ejemplo: Darlenis Severino)");
+    IO.println("Introduzca su nombre completo: (Ejemplo: Darlenis Severino)"); //CAMBIAR QUE PIDA PRIMERO NOMBRE Y LUEGO APELLIDO Y LO JUNTE.
     String titular = sc.nextLine();
     //Hago comprobacion para que no dejen vacio el titular.
     while (titular == null || titular == ""){
@@ -19,8 +19,8 @@ void main() {
         ValidarIban(iban);
     }
 
-    //Si el metodo devuelve true y la variable titular no está vacia se ejecuta el programa
-    if (ValidarIban(iban) && titular != null){
+    //Si el metodo devuelve true se ejecuta el programa
+    if (ValidarIban(iban)){
         //Creamos la cuenta
         CuentaBancaria nuevaCuenta = new CuentaBancaria(iban, titular);
         String opcion = "salir";
@@ -62,14 +62,14 @@ void main() {
                 //Convierto de string a double
                 double cantidad = Double.valueOf(ingreso);
                 //Dentro de la condicion se ejecuta el metodo que da true y si da false muestra error
-                if (nuevaCuenta.ingresarDinero(cantidad)){
-                    IO.println("Se ha ingresado dinero correctamente.");
-                } else {
-                    IO.println("No se ha podido ingresar el dinero, porfavor, vuelva a intentarlo.");
-                }
-                if(cantidad > 3000){
-                    IO.println("AVISO: Notificar a hacienda.");
-                }
+                    if (nuevaCuenta.ingresarDinero(cantidad)) {
+                        IO.println("Se ha ingresado dinero correctamente.");
+                    } else {
+                        IO.println("No se ha podido ingresar el dinero, porfavor, vuelva a intentarlo.");
+                    }
+                    if (cantidad > 3000) {
+                        IO.println("AVISO: Notificar a hacienda.");
+                    }
             }
             else if (opcion.equalsIgnoreCase("retirar")) {
                 IO.println("Por favor, introduzca la cantidad en euros que desee retirar:");
@@ -80,14 +80,18 @@ void main() {
                 }
                 double cantidad = Double.valueOf(retirar);
                 //nuevaCuenta.retirarDinero(cantidad);
-                if (nuevaCuenta.retirarDinero(cantidad)){
-                    IO.println("Se ha retirado dinero correctamente.");
-                } else {
-                    IO.println("No se ha podido retirar el dinero, porfavor, vuelva a intentarlo.");
-                }
-                if(nuevaCuenta.getSaldo() < 0 && nuevaCuenta.getSaldo() >= -50){
-                    IO.println("AVISO: Saldo negativo.");
-                }
+                    if ((nuevaCuenta.getSaldo() - cantidad) >= -50){
+                        if (nuevaCuenta.retirarDinero(cantidad)){
+                            IO.println("Se ha retirado dinero correctamente.");
+                        } else {
+                            IO.println("No se ha podido retirar el dinero, porfavor, vuelva a intentarlo.");
+                        }
+                        if(nuevaCuenta.getSaldo() < 0 && nuevaCuenta.getSaldo() >= -50){
+                            IO.println("AVISO: Saldo negativo.");
+                        }
+                    } else {
+                        IO.println("Su saldo ya esta en negativo, no se puede retirar.");
+                    }
             }
             //Mostrar historial de movimientos
             else if (opcion.equalsIgnoreCase("m")) {

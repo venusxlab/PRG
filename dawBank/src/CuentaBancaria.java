@@ -68,7 +68,7 @@ public class CuentaBancaria {
     //Metodo retirar dinero
     public boolean retirarDinero(double cantidad){
         boolean resultado = false;
-        if (cantidad > 0 && cantidad <= this.saldo){
+        if (cantidad >= -50){
             /*
             if (this.nMovimientosActuales >= this.Movimientos.length){
                 this.ampliarDimensionMovimiento();
@@ -80,6 +80,8 @@ public class CuentaBancaria {
             this.nMovimientosActuales++;
             this.saldo = this.saldo - cantidad;
             resultado = true;
+        } else {
+            resultado = false;
         }
         return resultado;
     }
