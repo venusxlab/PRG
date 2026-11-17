@@ -9,19 +9,19 @@ public class CuentaBancaria {
     private double saldo;
 
     //Atributos coleccion de la clase relacionado con la coleccion de Movimientos
-    private final Movimiento[] Movimientos;
-    private int nMovimientosActuales = 0;
+    private  Movimiento[] Movimientos;
+    private int nMovimientosActuales;
 
     //Constructor
     public CuentaBancaria (String iban, String titular) {
         this.iban = iban;
         this.titular = titular;
-        this.saldo = 0;
+        this.saldo = 0.0;
         this.Movimientos = new Movimiento[100];
-        nMovimientosActuales = 0;
+        this.nMovimientosActuales = 0;
     }
 
-    //getters y setters
+    //getters
     public String getIban(){
         return this.iban;
     }
@@ -30,7 +30,7 @@ public class CuentaBancaria {
         return this.titular;
     }
 
-    public double getSaldo() {
+    public Double getSaldo() {
         return this.saldo;
     }
 
@@ -49,13 +49,19 @@ public class CuentaBancaria {
     //Metodo ingresar dinero
     public boolean ingresarDinero(double cantidad){
         boolean resultado = false;
+        //this.saldo += Math.abs(cantidad);
+        //resultado = true;
         if (cantidad > 0){
-            /*
             if (this.nMovimientosActuales >= this.Movimientos.length){
                 this.ampliarDimensionMovimiento();
             }
-
-             */
+            /*if(this.nMovimientosActuales < this.Movimientos.length){
+                this.Movimientos[this.nMovimientosActuales] = new Movimiento(Tipo.INGRESO,Math.abs(cantidad));
+            }else if(this.nMovimientosActuales >= this.Movimientos.length){
+                //AMPLIAR la coleccion
+                this.ampliarDimensionMovimiento();
+                this.Movimientos[this.nMovimientosActuales] = new Movimiento(Tipo.INGRESO,Math.abs(cantidad));
+            }*/
             Movimiento ingreso = new Movimiento(Tipo.INGRESO, cantidad);
             this.Movimientos[this.nMovimientosActuales] = ingreso;
             this.nMovimientosActuales++;
@@ -69,12 +75,12 @@ public class CuentaBancaria {
     public boolean retirarDinero(double cantidad){
         boolean resultado = false;
         if (cantidad >= -50){
-            /*
+
             if (this.nMovimientosActuales >= this.Movimientos.length){
                 this.ampliarDimensionMovimiento();
             }
 
-             */
+
             Movimiento retirada = new Movimiento(Tipo.RETIRADA, cantidad);
             this.Movimientos[this.nMovimientosActuales] = retirada;
             this.nMovimientosActuales++;
@@ -92,25 +98,24 @@ public class CuentaBancaria {
         if (this.nMovimientosActuales == 0){
             historial = "No hay movimientos asociados";
         } else {
-            for (int i = 0; i < nMovimientosActuales; i++) {
+            for (int i = 0; i < this.nMovimientosActuales; i++) {
                 historial =  historial + this.Movimientos[i].mostrarInfoMovimiento() + "\n";
             }
         }
         return historial;
     }
 
-    /*
+
     //Ampliar dimension del array movimientos por si se llena
     private void ampliarDimensionMovimiento(){
         //Se va sumando de 100 en 100. Dimension del array actual (100), los llena y le suma la dimension inicial (100).
-        Movimiento [] MovimientosAux = new Movimiento[this.Movimientos.length + this.dimensionInicial];
+        Movimiento [] MovimientosAux = new Movimiento[this.Movimientos.length + 100];
         for (int i = 0; i < this.Movimientos.length; i++){
             MovimientosAux[i] = this.Movimientos[i];
         }
-        //Hacemos que libros apunte a MovimientosAux para que se borre solo y lo sobreescriba y se queda apuntando solo a ese.
+        //Hacemos que Movimientos apunte a MovimientosAux para que se borre solo y lo sobreescriba y se queda apuntando solo a ese.
         this.Movimientos = MovimientosAux;
     }
 
-     */
 
 } //clase

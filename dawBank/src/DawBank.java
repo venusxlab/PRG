@@ -1,4 +1,6 @@
 void main() {
+    //final String titularPattern = "[a-z A-Z]{3,}";
+    //final String ibanPattern = "[A-Z]{2}[0-9]{22}";
     IO.println("Bienvenido al inicio para crear su cuenta bancaria.");
     //Guardo el IBAN y el titular en variables para hacerlo despues.
     IO.println("Introduzca el IBAN: (Ejemplo: ES1234567891234567891234)");

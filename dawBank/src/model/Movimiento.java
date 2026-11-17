@@ -22,6 +22,23 @@ public class Movimiento {
         this.cantidad = cantidad;
     }
 
+    //getters
+    public int getId() {
+        return this.id;
+    }
+
+    public double getCantidad() {
+        return this.cantidad;
+    }
+
+    public Tipo getTipo() {
+        return this.tipo;
+    }
+
+    public LocalDateTime getFecha() {
+        return this.fecha;
+    }
+
     //Metodo para obtener toda la información de Movimiento
     public String mostrarInfoMovimiento(){
         String infoMovimiento = "";
