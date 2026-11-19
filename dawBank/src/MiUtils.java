@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class MiUtils {
-    private static String sysytem;
 
     //Para leer double por pantalla y pedirlo.
     public static double leerDoublePantalla(String mensaje){
@@ -38,4 +37,16 @@ public class MiUtils {
         }while (!isOk);
         return texto;
     }
+
+    //Se pasa un array con todas las opciones y el metodo las muestra por pantalla. Asi genera un menu de manera sencilla
+    public void generarMenuOpciones(String[] opciones){
+        IO.println("Por favor escoja la opcion deseada");
+        if (opciones.length > 0){
+            for (String opcion : opciones){
+                IO.println(opcion);
+            }
+        }
+    } // String [] opciones = {"1. Datos de la cuenta", "2. IBAN", "3. Titular", "4. Saldo",
+    //"5. Ingreso", "6. Retirar", "7. Movimientos", "8. Salir"};
+    // MiUtils.generarMenuOpciones(opciones);
 }
