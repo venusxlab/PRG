@@ -52,6 +52,10 @@ public class Cliente {
         return this.peliculasAlquiladas;
     }
 
+    public void setFechaBaja(LocalDate fechaBaja) {
+        this.fechaBaja = fechaBaja;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -43,22 +43,9 @@ public class VideoDaw {
 
         //Comprobación si es distinto de null para evitar excepción NullPointer, en caso contrario devuelve false
         if (pelicula != null) {
-//            if (this.nLibrosActuales < this.libros.length){
-//                //Esto se podría extraer a una función aparte llamarlo guardarLibro y no repetir esas tres lineas de código.
-//                this.libros[this.nLibrosActuales] = libro;
-//                this.nLibrosActuales++;
-//                resultado = true;
-//            } else {
-//                //No hay espacio en el array para insertar
-//                //Reflexionar opción: ampliar dimension del array
-//                this.ampliarDimensionBiblioteca();
-//                this.libros[this.nLibrosActuales] = libro;
-//                this.nLibrosActuales++;
-//                resultado = true;
-//            }
             //Lo mismo que lo de arriba pero en menos líneas
             if (this.nPeliculasRegistradas >= this.peliculasRegistradas.length){
-                this.ampliarDimensionBiblioteca(); //Hacer metodo
+                this.ampliarDimensionPelicula(); //Hacer metodo
             }
             this.peliculasRegistradas[this.nPeliculasRegistradas] = pelicula;
             this.nPeliculasRegistradas++;
@@ -85,16 +72,99 @@ public class VideoDaw {
     }
 
     //MOSTRAR PELICULAS REGISTRADAS
+    public String infoPeliculasRegistradas(){
+        String infoPeliculas = "";
+        //Recorrer el array.
+        //No vale un foreach porque parte del array esta vacio por lo tanto recorres lo que no hace falta.
+        //tambien porque si intentas acceder a una posicion vacia (null) dara NullPointerException.
+        //Se usa un for con iterador con la variable libros actuales y te quitas los problemas.
+        for (int i = 0; i < this.nPeliculasRegistradas; i++) {
+            //Dentro de la variable string con el for sumas toda la informacion de libro que se irá sumando con la anterior informacion.
+            //Por eso se usa el += con la posicion de i en el array y el metodo de info libro y un salto de linea.
+            infoPeliculas += this.peliculasRegistradas[i].toString() + "\n";
+            // Lo de arriba es lo mismo que lo siguiente:
+            // infoLibros = infoLibros + this.libros[i].infoLibro() + "\n";
+        }
+
+        return infoPeliculas;
+    }
 
     //MOSTRAR CLIENTES REGISTRADOS
+    public String infoClientesRegistrados(){
+        String infoClientes = "";
+        //Recorrer el array.
+        //No vale un foreach porque parte del array esta vacio por lo tanto recorres lo que no hace falta.
+        //tambien porque si intentas acceder a una posicion vacia (null) dara NullPointerException.
+        //Se usa un for con iterador con la variable libros actuales y te quitas los problemas.
+        for (int i = 0; i < this.nClientesRegistrados; i++) {
+            //Dentro de la variable string con el for sumas toda la informacion de libro que se irá sumando con la anterior informacion.
+            //Por eso se usa el += con la posicion de i en el array y el metodo de info libro y un salto de linea.
+            infoClientes += this.clientesRegistrados[i].toString() + "\n";
+            // Lo de arriba es lo mismo que lo siguiente:
+            // infoLibros = infoLibros + this.libros[i].infoLibro() + "\n";
+        }
+
+        return infoClientes;
+    }
 
     //ALQUILAR PELICULA
 
     //DEVOLVER PELICULA
 
     //DAR DE BAJA CLIENTE
+    public boolean darCliente(Cliente cliente) {
+        boolean resultado = false;
+        //comprobamos que el libro que nos dan no este vacío
+        if (cliente != null) {
+            for (int i = 0; i <clientesRegistrados.length; i++) {
+                if (cliente == clientesRegistrados[i]) {
+                    cliente.setFechaBaja(LocalDate.now());
+                    resultado = true;
+                }
+            }
+        }
+        return resultado;
+    }
 
     //REGISTRAR CLIENTE
+    public boolean registrarPelicula(Cliente cliente){
+        boolean resultado = false;
+
+        //Comprobación si es distinto de null para evitar excepción NullPointer, en caso contrario devuelve false
+        if (cliente != null) {
+            //Lo mismo que lo de arriba pero en menos líneas
+            if (this.nClientesRegistrados >= this.clientesRegistrados.length){
+                this.ampliarDimensionClientes(); //Hacer metodo
+            }
+            this.clientesRegistrados[this.nClientesRegistrados] = cliente;
+            this.nClientesRegistrados++;
+            resultado = true;
+        }
+
+        return resultado;
+    }
+
+    //AMPLIAR DIMENSION ARRAY PELICULAS
+    private void ampliarDimensionPelicula(){
+        //Se va sumando de 100 en 100. Dimension del array actual (100), los llena y le suma la dimension inicial (100).
+        Pelicula [] peliculasAux = new Pelicula[this.peliculasRegistradas.length + 100];
+        for (int i = 0; i < this.peliculasRegistradas.length; i++){
+            peliculasAux[i] = this.peliculasRegistradas[i];
+        }
+        //Hacemos que Movimientos apunte a MovimientosAux para que se borre solo y lo sobreescriba y se queda apuntando solo a ese.
+        this.peliculasRegistradas = peliculasAux;
+    }
+
+    //AMPLIAR DIMENSION ARRAY CLIENTES
+    private void ampliarDimensionClientes(){
+        //Se va sumando de 100 en 100. Dimension del array actual (100), los llena y le suma la dimension inicial (100).
+        Cliente [] clientesAux = new Cliente[this.clientesRegistrados.length + 100];
+        for (int i = 0; i < this.clientesRegistrados.length; i++){
+            clientesAux[i] = this.clientesRegistrados[i];
+        }
+        //Hacemos que Movimientos apunte a MovimientosAux para que se borre solo y lo sobreescriba y se queda apuntando solo a ese.
+        this.clientesRegistrados = clientesAux;
+    }
 
 
     @Override
