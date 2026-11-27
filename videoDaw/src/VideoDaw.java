@@ -2,6 +2,7 @@ import model.Cliente;
 import model.Pelicula;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class VideoDaw {
@@ -108,6 +109,18 @@ public class VideoDaw {
     }
 
     //ALQUILAR PELICULA
+    public boolean alquilarPelicula(Pelicula pelicula, Cliente cliente){
+        boolean resultado = false;
+        if (pelicula != null && cliente != null){
+            if (pelicula.getAlquilada() == false){
+                pelicula.setFechaAlquiler(LocalDateTime.now());
+                pelicula.setAlquilada(true);
+                //HACER SET DE PELICULAS ALQUILADAS EN CLIENTE PARA PODER METER ESA PELICULA EN ESE ARRAY
+            }
+        }
+
+        return resultado;
+    }
 
     //DEVOLVER PELICULA
 
@@ -116,7 +129,7 @@ public class VideoDaw {
         boolean resultado = false;
         //comprobamos que el libro que nos dan no este vacío
         if (cliente != null) {
-            for (int i = 0; i <clientesRegistrados.length; i++) {
+            for (int i = 0; i < clientesRegistrados.length; i++) {
                 if (cliente == clientesRegistrados[i]) {
                     cliente.setFechaBaja(LocalDate.now());
                     resultado = true;

@@ -56,6 +56,10 @@ public class Pelicula {
         return this.isAlquilada;
     }
 
+    public void setAlquilada(Boolean alquilada) {
+        this.isAlquilada = alquilada;
+    }
+
     public void setFechaBaja(LocalDate fechaBaja) {
         this.fechaBaja = fechaBaja;
     }
